@@ -202,7 +202,7 @@ export default function Portfolio() {
             <a href="https://www.linkedin.com/in/onur-kapucu/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-800/50 border border-gray-700 rounded-full hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="mailto:kapucuonur@hotmail.com" className="p-3 bg-gray-800/50 border border-gray-700 rounded-full hover:bg-purple-500 hover:text-white hover:border-purple-500 transition-all duration-300">
+            <a href="mailto:onur@trihonor.com" className="p-3 bg-gray-800/50 border border-gray-700 rounded-full hover:bg-purple-500 hover:text-white hover:border-purple-500 transition-all duration-300">
               <Mail className="w-6 h-6" />
             </a>
           </div>
@@ -211,7 +211,7 @@ export default function Portfolio() {
              <a href="#products" onClick={() => scrollToSection('products')} className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-full text-lg font-bold hover:shadow-lg hover:shadow-cyan-500/40 transition-all transform hover:-translate-y-1">
               View My Products
             </a>
-            <a href="/Onur Kapucu - Software Engineer Resume.pdf" download className="px-8 py-3 rounded-full text-lg font-semibold border border-gray-600 hover:border-cyan-400 hover:text-cyan-400 transition-all">
+            <a href="/Onur_Kapucu_Resume_2026_Updated.pdf" download className="px-8 py-3 rounded-full text-lg font-semibold border border-gray-600 hover:border-cyan-400 hover:text-cyan-400 transition-all">
               Download CV
             </a>
           </div>
@@ -427,7 +427,7 @@ export default function Portfolio() {
             I'm currently available for full-time opportunities. Whether you need a native macOS app, a wearable solution, or a scalable web platform.
           </p>
           
-          <a href="mailto:kapucuonur@hotmail.com" className="inline-flex items-center space-x-3 bg-white text-gray-900 px-10 py-4 rounded-full text-lg font-bold hover:bg-cyan-400 transition-all transform hover:scale-105 shadow-lg shadow-white/10 hover:shadow-cyan-400/20">
+          <a href="mailto:onur@trihonor.com" className="inline-flex items-center space-x-3 bg-white text-gray-900 px-10 py-4 rounded-full text-lg font-bold hover:bg-cyan-400 transition-all transform hover:scale-105 shadow-lg shadow-white/10 hover:shadow-cyan-400/20">
             <Mail className="w-5 h-5" />
             <span>Say Hello</span>
           </a>
@@ -445,7 +445,7 @@ export default function Portfolio() {
                </div>
                <span className="text-sm text-gray-500 group-hover:text-blue-500">LinkedIn</span>
             </a>
-            <a href="mailto:kapucuonur@hotmail.com" className="flex flex-col items-center group">
+            <a href="mailto:onur@trihonor.com" className="flex flex-col items-center group">
                <div className="p-4 bg-gray-800 rounded-full group-hover:bg-purple-500 transition-colors mb-3">
                  <Mail className="w-6 h-6 text-white" />
                </div>
