@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Code, Mail, Github, Linkedin, ExternalLink, ChevronDown, Menu, X, Smartphone, Watch, Monitor, Terminal } from 'lucide-react';
+import { Code, Mail, Github, Linkedin, ExternalLink, ChevronDown, Menu, X, Smartphone, Watch, Monitor, Terminal, Server, Briefcase } from 'lucide-react';
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,54 +12,110 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "CoachOnurAI Garmin Bridge",
-      description: "A Garmin Connect IQ app acting as a bridge between the CoachOnurAI web platform and Garmin ecosystem, allowing users to seamlessly sync training plans directly to their watches.",
-      tech: ["Monkey C", "Garmin CIQ", "API Integration", "React"],
+      title: "Hotel Booking System",
+      description: "Production-ready hotel management platform with real-time availability tracking, secure payments, Docker containerization, and Cloudflare Tunnels for secure external access. Self-hosted on Raspberry Pi 5.",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Docker", "Nginx", "Cloudflare"],
+      link: "https://github.com/kapucuonur",
+      github: "https://github.com/kapucuonur",
+      features: ["Real-time Availability", "Docker", "Self-hosted"],
+      color: "from-violet-500 to-purple-600",
+      type: "Full-Stack Platform"
+    },
+    {
+      title: "CoachOnur AI",
+      description: "Production AI coaching platform for athletes with real-time Garmin OAuth2 data sync (HRV, Sleep, Activity), AI-generated training decisions via Google Gemini, Stripe subscriptions, and comprehensive analytics.",
+      tech: ["FastAPI", "React", "PostgreSQL", "Stripe", "Garmin API", "Google Gemini"],
       link: "https://coachonurai.com",
-      github: "https://github.com/kapucuonur", 
-      features: ["Seamless Sync", "Training Plans", "Wearable Tech"],
+      github: "https://github.com/kapucuonur",
+      features: ["Garmin Sync", "AI Coaching", "Stripe Payments"],
       color: "from-emerald-400 to-teal-500",
-      type: "Garmin CIQ & Web"
+      type: "AI SaaS Platform"
     },
     {
       title: "WatchToMac",
-      description: "Native macOS utility solving the file transfer issue for Garmin users on Apple Silicon. Replaces Android File Transfer.",
-      tech: ["Swift", "macOS", "System Programming", "USB Protocol"],
+      description: "Native macOS utility solving the critical Garmin file transfer issue on Apple Silicon (M1/M2/M3) with low-level USB/MTP protocol implementation. Solves a compatibility issue affecting 100K+ users.",
+      tech: ["Swift", "SwiftUI", "AppKit", "System Programming", "USB/MTP"],
       link: "https://2236586809450.gumroad.com/l/kdrbne",
-      github: "https://github.com/kapucuonur", // Closed source product
+      github: "https://github.com/kapucuonur",
       features: ["Native App", "M1/M2/M3 Optimized", "Plug & Play"],
       color: "from-orange-500 to-red-500",
       type: "macOS App"
     },
     {
-      title: "Ice Bath Tracker",
-      description: "Specialized Garmin wearable app for tracking cold plunges, monitoring heart rate & skin temperature in real-time.",
-      tech: ["Monkey C", "Garmin CIQ", "Embedded Systems"],
-      link: "https://apps.garmin.com/apps/9d9633a0-51a9-48c3-8fad-44de0e4277fc",
-      github: "https://github.com/kapucuonur", 
-      features: ["Biometric Tracking", "Wearable Tech", "Health Data"],
-      color: "from-blue-400 to-cyan-300",
-      type: "Wearable App"
-    },
-    {
-      title: "Learn Finnish",
-      description: "AI-powered interactive language learning platform designed specifically for expats living in Finland.",
-      tech: ["Next.js", "React", "OpenAI API", "Tailwind"],
+      title: "Learn-Finnish.fi",
+      description: "AI-powered SaaS platform generating personalized Finnish lessons via Google Gemini, serving 100+ active paying subscribers with Stripe payment integration and Firebase backend.",
+      tech: ["Next.js", "React", "Google Gemini API", "Stripe", "Firebase"],
       link: "https://learn-finnish.fi",
       github: "https://github.com/kapucuonur",
-      features: ["AI Tutor", "Interactive Lessons", "SaaS"],
+      features: ["AI Tutor", "100+ Subscribers", "Stripe Payments"],
       color: "from-indigo-500 to-purple-500",
-      type: "Web Platform"
+      type: "AI SaaS Platform"
+    },
+    {
+      title: "Ice Bath Tracker",
+      description: "Cold plunge monitoring wearable app published on Garmin Connect IQ Store, with real-time skin temperature, heart rate adaptation tracking, and recovery analytics for global users.",
+      tech: ["Monkey C", "Garmin CIQ SDK", "Wearable Sensor APIs"],
+      link: "https://apps.garmin.com/apps/9d9633a0-51a9-48c3-8fad-44de0e4277fc",
+      github: "https://github.com/kapucuonur",
+      features: ["Biometric Tracking", "Global Store", "Recovery Analytics"],
+      color: "from-blue-400 to-cyan-300",
+      type: "Wearable App"
     }
   ];
 
   const skills = {
-    "Mobile & Native": ["Swift", "Flutter", "Dart", "React Native", "Garmin CIQ (Monkey C)"],
-    "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux"],
-    "Backend": ["Node.js", "Python", "Django", "Flask", "System Design"],
-    "AI & Cloud": ["TensorFlow", "OpenAI/Gemini", "Docker", "AWS", "Firebase"],
-    "Creative Tools": ["CapCut", "OBS Studio", "Figma", "Adobe XD"]
+    "Mobile & Native": ["Swift", "SwiftUI", "AppKit", "Flutter", "Dart", "React Native", "Monkey C (Garmin)"],
+    "Frontend": ["React.js", "Next.js", "TypeScript", "TailwindCSS", "Redux", "Material-UI"],
+    "Backend": ["Node.js", "Express.js", "Python", "FastAPI", "Flask", "REST APIs", "WebSockets"],
+    "DevOps & Infrastructure": ["Docker", "Docker Compose", "Nginx", "Cloudflare Tunnels", "Raspberry Pi", "CI/CD", "Git"],
+    "Databases": ["PostgreSQL", "MongoDB", "Firebase", "SQLite"],
+    "AI & Cloud": ["Google Gemini API", "OpenAI API", "Groq API", "TensorFlow", "RLHF", "Azure", "Vercel"],
   };
+
+  const experiences = [
+    {
+      role: "Founder & Software Engineer",
+      company: "TriHonor",
+      companyUrl: "https://trihonor.com",
+      period: "Nov 2022 – Present",
+      location: "Tampere, Finland",
+      color: "border-cyan-400",
+      highlights: [
+        "Founded registered Finnish software company (Y-tunnus: 3131622-7) with 30+ shipped projects",
+        "Architected self-hosted production stack on Raspberry Pi 5 with Docker, Nginx, PostgreSQL & Cloudflare Tunnels",
+        "Engineered CoachOnur AI — real-time athlete coaching platform with Garmin OAuth2, Google Gemini & Stripe",
+        "Built Learn-Finnish.fi serving 100+ active paying subscribers with AI-generated personalized lessons",
+        "Published native macOS utility (WatchToMac) & Garmin wearable app on Connect IQ Store"
+      ]
+    },
+    {
+      role: "Freelance Software Engineer & Nordic Market Lead",
+      company: "METIQ Solutions",
+      companyUrl: null,
+      period: "Nov 2025 – Apr 2026",
+      location: "Remote",
+      color: "border-purple-400",
+      highlights: [
+        "Built Garmin Connect IQ smart home control apps integrating with openHAB IoT platform",
+        "Designed AI-powered smart home solutions for Nordic & Baltic markets (Finland, Estonia, Latvia, Lithuania)",
+        "Led B2B partnerships with 10+ targets including Bisly, HUUM, Smart Control OÜ, and Volantra Grupp",
+        "Collaborated with engineering teams in Bratislava & Zagreb on AI-driven feature development"
+      ]
+    },
+    {
+      role: "AI Training Specialist",
+      company: "Outlier AI",
+      companyUrl: null,
+      period: "2024",
+      location: "Remote",
+      color: "border-green-400",
+      highlights: [
+        "Optimized internal AI workflows by building custom dashboards using Flask and Groq API",
+        "Increased team productivity by 25% through automation and tooling",
+        "Contributed to RLHF pipelines improving LLM code generation accuracy for production deployment"
+      ]
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans">
@@ -76,7 +132,7 @@ export default function Portfolio() {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['home', 'about', 'products', 'tech stack', 'contact'].map((item) => (
+              {['home', 'about', 'experience', 'products', 'tech stack', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.replace(' ', ''))}
@@ -99,7 +155,7 @@ export default function Portfolio() {
           {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="md:hidden py-4 space-y-2 bg-gray-900 border-t border-gray-800">
-              {['home', 'about', 'products', 'techstack', 'contact'].map((item) => (
+              {['home', 'about', 'experience', 'products', 'techstack', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -133,10 +189,10 @@ export default function Portfolio() {
             Founder @ <a href="https://trihonor.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors underline decoration-cyan-400/30">TriHonor</a>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-6 max-w-3xl mx-auto leading-relaxed">
-            Building cross-platform solutions for <span className="text-white font-semibold">Web</span>, <span className="text-white font-semibold">Mobile</span>, & <span className="text-white font-semibold">Native Systems</span> (macOS/Garmin).
+            Full-Stack Engineer specializing in <span className="text-white font-semibold">AI-integrated products</span>, <span className="text-white font-semibold">self-hosted infrastructure</span>, and cross-platform development across <span className="text-white font-semibold">Web, Mobile & Native Systems</span>.
           </p>
           <p className="text-lg text-cyan-500/80 mb-10 font-medium">
-            📍 Tampere, Finland | 🚀 Launching Products
+            📍 Tampere, Finland | 🐧 Raspberry Pi 5 Self-Hosted | 🚀 Shipping Real Products
           </p>
 
           <div className="flex justify-center space-x-5 mb-12">
@@ -146,7 +202,7 @@ export default function Portfolio() {
             <a href="https://www.linkedin.com/in/onur-kapucu/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-800/50 border border-gray-700 rounded-full hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="mailto:onur@trihonor.com" className="p-3 bg-gray-800/50 border border-gray-700 rounded-full hover:bg-purple-500 hover:text-white hover:border-purple-500 transition-all duration-300">
+            <a href="mailto:kapucuonur@hotmail.com" className="p-3 bg-gray-800/50 border border-gray-700 rounded-full hover:bg-purple-500 hover:text-white hover:border-purple-500 transition-all duration-300">
               <Mail className="w-6 h-6" />
             </a>
           </div>
@@ -173,27 +229,32 @@ export default function Portfolio() {
             <div>
               <h2 className="text-4xl font-bold mb-8">
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  More Than Just Web
+                  Full-Stack. AI-Integrated. Self-Hosted.
                 </span>
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                I'm a passionate engineer who bridges the gap between <strong>Web, Native, and Hardware</strong>. 
-                I don't just build websites; I create system utilities for macOS, develop wearable apps for Garmin, 
-                and build cross-platform mobile solutions.
+                Versatile Software Engineer with <strong>3+ years</strong> delivering production-grade applications across <strong>Web, Mobile, and Hardware</strong> ecosystems. I architect and deploy full-stack systems using React, FastAPI, Node.js, and modern DevOps infrastructure.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                Whether it's optimizing a React backend or writing low-level code for a smartwatch, 
-                I enjoy the entire journey from <strong>concept to deployment</strong>.
+                Self-hosted infrastructure specialist running <strong>multiple production apps on Raspberry Pi 5</strong> with Docker, Nginx, and Cloudflare Tunnels — zero unplanned downtime. Proven track record shipping AI-integrated products with real users and revenue.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gray-800/50 p-4 rounded-lg border-l-4 border-cyan-400">
-                  <h4 className="font-bold text-white mb-1">Native macOS</h4>
-                  <p className="text-sm text-gray-400">Swift & System Programming</p>
+                  <h4 className="font-bold text-white mb-1">Self-Hosted Infra</h4>
+                  <p className="text-sm text-gray-400">Raspberry Pi 5 + Docker + Cloudflare</p>
                 </div>
                 <div className="bg-gray-800/50 p-4 rounded-lg border-l-4 border-blue-500">
-                  <h4 className="font-bold text-white mb-1">Wearable Tech</h4>
-                  <p className="text-sm text-gray-400">Garmin Monkey C</p>
+                  <h4 className="font-bold text-white mb-1">Wearable & Native</h4>
+                  <p className="text-sm text-gray-400">Swift macOS & Garmin Monkey C</p>
+                </div>
+                <div className="bg-gray-800/50 p-4 rounded-lg border-l-4 border-purple-400">
+                  <h4 className="font-bold text-white mb-1">AI Integration</h4>
+                  <p className="text-sm text-gray-400">Google Gemini, OpenAI, Groq API</p>
+                </div>
+                <div className="bg-gray-800/50 p-4 rounded-lg border-l-4 border-green-400">
+                  <h4 className="font-bold text-white mb-1">Registered Company</h4>
+                  <p className="text-sm text-gray-400">TriHonor Y-tunnus: 3131622-7</p>
                 </div>
               </div>
             </div>
@@ -204,25 +265,69 @@ export default function Portfolio() {
                   <div className="bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center hover:border-cyan-500/50 transition-colors">
                     <Monitor className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
                     <div className="text-3xl font-bold text-white mb-1">30+</div>
-                    <div className="text-sm text-gray-400">Web Projects</div>
+                    <div className="text-sm text-gray-400">Ships Projects</div>
                   </div>
                   <div className="bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center hover:border-purple-500/50 transition-colors">
-                    <Watch className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-                    <div className="text-3xl font-bold text-white mb-1">4+</div>
-                    <div className="text-sm text-gray-400">Native Apps</div>
+                    <Server className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+                    <div className="text-3xl font-bold text-white mb-1">0</div>
+                    <div className="text-sm text-gray-400">Unplanned Downtime</div>
                   </div>
                   <div className="bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center hover:border-green-500/50 transition-colors">
                     <Smartphone className="w-8 h-8 text-green-400 mx-auto mb-3" />
                     <div className="text-3xl font-bold text-white mb-1">3+</div>
-                    <div className="text-sm text-gray-400">Years Exp</div>
+                    <div className="text-sm text-gray-400">Years Experience</div>
                   </div>
                   <div className="bg-gray-900 p-6 rounded-2xl border border-gray-800 text-center hover:border-orange-500/50 transition-colors">
                     <Code className="w-8 h-8 text-orange-400 mx-auto mb-3" />
-                    <div className="text-3xl font-bold text-white mb-1">10+</div>
-                    <div className="text-sm text-gray-400">Tech Stack</div>
+                    <div className="text-3xl font-bold text-white mb-1">100+</div>
+                    <div className="text-sm text-gray-400">Active Subscribers</div>
                   </div>
                </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Experience
+              </span>
+            </h2>
+            <p className="text-gray-400 text-lg">Professional roles and impact delivered.</p>
+          </div>
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <div key={index} className={`bg-gray-800/50 rounded-2xl p-8 border border-gray-700 border-l-4 ${exp.color} hover:bg-gray-800 transition-colors`}>
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                    <div className="flex items-center gap-2 mt-1">
+                      <Briefcase className="w-4 h-4 text-gray-400" />
+                      {exp.companyUrl ? (
+                        <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors">{exp.company}</a>
+                      ) : (
+                        <span className="text-cyan-400 font-semibold">{exp.company}</span>
+                      )}
+                      <span className="text-gray-500">•</span>
+                      <span className="text-gray-400 text-sm">{exp.location}</span>
+                    </div>
+                  </div>
+                  <span className="text-sm font-medium text-gray-400 bg-gray-900 px-4 py-1.5 rounded-full border border-gray-700 whitespace-nowrap">{exp.period}</span>
+                </div>
+                <ul className="space-y-2">
+                  {exp.highlights.map((h, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-300">
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></span>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -239,7 +344,7 @@ export default function Portfolio() {
             <p className="text-gray-400 text-lg">Live applications solving real-world problems.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="group bg-gray-800 rounded-2xl overflow-hidden hover:transform hover:-translate-y-2 transition-all duration-300 border border-gray-700 hover:border-gray-500 shadow-lg hover:shadow-2xl hover:shadow-cyan-500/10 flex flex-col">
                 <div className={`h-3 bg-gradient-to-r ${project.color}`}></div>
@@ -322,7 +427,7 @@ export default function Portfolio() {
             I'm currently available for full-time opportunities. Whether you need a native macOS app, a wearable solution, or a scalable web platform.
           </p>
           
-          <a href="mailto:onur@trihonor.com" className="inline-flex items-center space-x-3 bg-white text-gray-900 px-10 py-4 rounded-full text-lg font-bold hover:bg-cyan-400 transition-all transform hover:scale-105 shadow-lg shadow-white/10 hover:shadow-cyan-400/20">
+          <a href="mailto:kapucuonur@hotmail.com" className="inline-flex items-center space-x-3 bg-white text-gray-900 px-10 py-4 rounded-full text-lg font-bold hover:bg-cyan-400 transition-all transform hover:scale-105 shadow-lg shadow-white/10 hover:shadow-cyan-400/20">
             <Mail className="w-5 h-5" />
             <span>Say Hello</span>
           </a>
@@ -340,7 +445,7 @@ export default function Portfolio() {
                </div>
                <span className="text-sm text-gray-500 group-hover:text-blue-500">LinkedIn</span>
             </a>
-            <a href="mailto:onur@trihonor.com" className="flex flex-col items-center group">
+            <a href="mailto:kapucuonur@hotmail.com" className="flex flex-col items-center group">
                <div className="p-4 bg-gray-800 rounded-full group-hover:bg-purple-500 transition-colors mb-3">
                  <Mail className="w-6 h-6 text-white" />
                </div>
