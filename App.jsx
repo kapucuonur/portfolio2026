@@ -23,13 +23,33 @@ export default function Portfolio() {
     },
     {
       title: "CoachOnur AI",
-      description: "Production AI coaching platform for athletes with real-time Garmin OAuth2 data sync (HRV, Sleep, Activity), AI-generated training decisions via Google Gemini, Stripe subscriptions, and comprehensive analytics.",
-      tech: ["FastAPI", "React", "PostgreSQL", "Stripe", "Garmin API", "Google Gemini"],
+      description: "Production AI coaching platform for athletes with real-time Garmin OAuth2 data sync (HRV, Sleep, Activity), AI-generated training decisions via Google Gemini, Stripe subscriptions, and comprehensive analytics. Native Android app on Google Play.",
+      tech: ["FastAPI", "React", "PostgreSQL", "Stripe", "Garmin API", "Google Gemini", "Android/Kotlin"],
       link: "https://coachonurai.com",
-      github: "https://github.com/kapucuonur",
-      features: ["Garmin Sync", "AI Coaching", "Stripe Payments"],
+      github: "https://github.com/kapucuonur/AI-Coach-Demo",
+      features: ["Garmin Sync", "AI Coaching", "Google Play"],
       color: "from-emerald-400 to-teal-500",
       type: "AI SaaS Platform"
+    },
+    {
+      title: "BikeFit AI",
+      description: "Computer-vision cycling position analysis, real-time pose estimation (YOLOv8 on a Raspberry Pi 5 + Hailo-8 NPU) converts camera input into centimeter-accurate bike fit recommendations. Native Android app on Google Play.",
+      tech: ["Python", "FastAPI", "React", "YOLOv8", "Hailo-8 NPU", "Android/Kotlin"],
+      link: "https://bike.coachonurai.com",
+      github: "https://github.com/kapucuonur/bikefit-Demo",
+      features: ["Pose Estimation", "cm-Accurate Fit", "Google Play"],
+      color: "from-sky-400 to-blue-600",
+      type: "Computer Vision · Mobile"
+    },
+    {
+      title: "SRE Daemon",
+      description: "Autonomous self-healing agent that watches systemd/Docker logs and metrics, diagnoses failures through a multi-tier LLM pipeline, and repairs them with sandboxed validation and a human-in-the-loop approval gate.",
+      tech: ["Python", "SQLite", "systemd", "Docker", "Multi-LLM Fallback"],
+      link: "https://github.com/kapucuonur/sre-daemon-demo",
+      github: "https://github.com/kapucuonur/sre-daemon-demo",
+      features: ["Self-Healing", "LLM Cascade", "Human-in-the-Loop"],
+      color: "from-rose-500 to-pink-600",
+      type: "Infrastructure · AI Agent"
     },
     {
       title: "WatchToMac",
@@ -69,7 +89,8 @@ export default function Portfolio() {
     "Backend": ["Node.js", "Express.js", "Python", "FastAPI", "Flask", "REST APIs", "WebSockets"],
     "DevOps & Infrastructure": ["Docker", "Docker Compose", "Nginx", "Cloudflare Tunnels", "Raspberry Pi", "CI/CD", "Git"],
     "Databases": ["PostgreSQL", "MongoDB", "Firebase", "SQLite"],
-    "AI & Cloud": ["Google Gemini API", "OpenAI API", "Groq API", "TensorFlow", "RLHF", "Azure", "Vercel"],
+    "AI & Agentic Tooling": ["Claude Code", "Cursor", "GitHub Copilot", "Google Gemini API", "OpenAI API", "Groq API", "TensorFlow", "RLHF"],
+    "Cloud & Deployment": ["Azure", "Vercel", "Firebase"],
   };
 
   const experiences = [
@@ -83,7 +104,9 @@ export default function Portfolio() {
       highlights: [
         "Founded registered Finnish software company (Y-tunnus: 3131622-7) with 30+ shipped projects",
         "Architected self-hosted production stack on Raspberry Pi 5 with Docker, Nginx, PostgreSQL & Cloudflare Tunnels",
-        "Engineered CoachOnur AI — real-time athlete coaching platform with Garmin OAuth2, Google Gemini & Stripe",
+        "Engineered CoachOnur AI, real-time athlete coaching platform with Garmin OAuth2, Google Gemini & Stripe",
+        "Built BikeFit AI, computer-vision bike fitting using real-time pose estimation on a Hailo-8 NPU, published on Google Play",
+        "Built SRE Daemon, autonomous self-healing agent diagnosing infra failures via an LLM cascade with human-in-the-loop approval",
         "Built Learn-Finnish.fi serving 100+ active paying subscribers with AI-generated personalized lessons",
         "Published native macOS utility (WatchToMac) & Garmin wearable app on Connect IQ Store"
       ]
@@ -211,7 +234,7 @@ export default function Portfolio() {
              <a href="#products" onClick={() => scrollToSection('products')} className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-full text-lg font-bold hover:shadow-lg hover:shadow-cyan-500/40 transition-all transform hover:-translate-y-1">
               View My Products
             </a>
-            <a href="/Onur_Kapucu_Resume_2026_Updated.pdf" download className="px-8 py-3 rounded-full text-lg font-semibold border border-gray-600 hover:border-cyan-400 hover:text-cyan-400 transition-all">
+            <a href="/Onur_Kapucu_Resume.pdf" download className="px-8 py-3 rounded-full text-lg font-semibold border border-gray-600 hover:border-cyan-400 hover:text-cyan-400 transition-all">
               Download CV
             </a>
           </div>
@@ -236,7 +259,7 @@ export default function Portfolio() {
                 Versatile Software Engineer with <strong>3+ years</strong> delivering production-grade applications across <strong>Web, Mobile, and Hardware</strong> ecosystems. I architect and deploy full-stack systems using React, FastAPI, Node.js, and modern DevOps infrastructure.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                Self-hosted infrastructure specialist running <strong>multiple production apps on Raspberry Pi 5</strong> with Docker, Nginx, and Cloudflare Tunnels — zero unplanned downtime. Proven track record shipping AI-integrated products with real users and revenue.
+                Self-hosted infrastructure specialist running <strong>multiple production apps on Raspberry Pi 5</strong> with Docker, Nginx, and Cloudflare Tunnels, zero unplanned downtime. Proven track record shipping AI-integrated products with real users and revenue.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
@@ -371,6 +394,12 @@ export default function Portfolio() {
                         <ExternalLink className="w-4 h-4" />
                         <span>View Product</span>
                       </a>
+                      {project.github && project.github !== "https://github.com/kapucuonur" && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors font-medium">
+                          <Github className="w-4 h-4" />
+                          <span>Code</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -425,6 +454,9 @@ export default function Portfolio() {
           </h2>
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
             I'm currently available for full-time opportunities. Whether you need a native macOS app, a wearable solution, or a scalable web platform.
+          </p>
+          <p className="text-sm text-gray-500 mb-8 -mt-8">
+            📍 Based in Tampere, Finland, Finnish permanent residence permit, no visa sponsorship required
           </p>
           
           <a href="mailto:onur@trihonor.com" className="inline-flex items-center space-x-3 bg-white text-gray-900 px-10 py-4 rounded-full text-lg font-bold hover:bg-cyan-400 transition-all transform hover:scale-105 shadow-lg shadow-white/10 hover:shadow-cyan-400/20">
